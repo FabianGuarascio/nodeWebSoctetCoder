@@ -1,8 +1,5 @@
 import { Router } from 'express'
 import { ProductManager } from '../ProductManager.js'
-import productsRouter from './products.router.js'
-import { Server } from 'socket.io'
-// import { io, server } from '../app.js'
 
 const pm = new ProductManager()
 

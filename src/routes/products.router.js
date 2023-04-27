@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import { ProductManager } from '../ProductManager.js'
-// import { io } from '../app.js'
 
 const router = Router()
 const pm = new ProductManager()
@@ -58,7 +57,6 @@ router.put('/:pid', async (req, res) => {
 })
 
 router.delete('/:pid', async (req, res) => {
-  // console.log(req.nombre)
   const pid = Number(req.params.pid)
 
   try {
@@ -71,7 +69,5 @@ router.delete('/:pid', async (req, res) => {
     return res.status(400).json({ error: error.message })
   }
 })
-
-
 
 export default router

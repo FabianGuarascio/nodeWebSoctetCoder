@@ -2,7 +2,6 @@ const socket = io()
 const productContainer = document.getElementById('product_container')
 const query = document.querySelectorAll('.product_card')
 
-socket.emit('message', 'mensaje desde le front end')
 socket.on('evento_server', (data) => {
   console.log(data)
 })
@@ -94,22 +93,16 @@ socket.on('add_product', (data) => {
 })
 
 socket.on('delete_product',(productId)=>{
-  console.log("deleteado")
   productContainer.removeChild(hashTableElement[productId])
   delete hashTableElement[productId]
 })
 
 
 function uno(id){
-  // socket.emit('delete_from_front',id)
   fetch(`http://localhost:8080/api/products/${id}`,
   {
     method: 'DELETE',
-}).then(response => console.log(response))
-  
-  // productContainer.removeChild(hashTableElement[id])
-  // delete hashTableElement[id]
-}
+}).then(response => console.log(response))}
 
 
 
